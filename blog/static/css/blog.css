@@ -1,24 +1,30 @@
 h1 a, h2 a {
-    color: #C25100;
+    color: #2c6e49;
     font-family: 'Lobster';
 }
 
 body {
+    background-color: #f5f7f6; /* very light sage */
+    color: #3e4c42; /* dark grayish green */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     padding-left: 15px;
+    margin: 0;
 }
 
 .page-header {
-    background-color: #C25100;
+    background-color: #4a7c59;
     margin-top: 0;
     margin-bottom: 40px;
     padding: 20px 20px 20px 40px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
 }
 
 .page-header h1,
 .page-header h1 a,
 .page-header h1 a:visited,
 .page-header h1 a:active {
-    color: #ffffff;
+    color: #e6f2e6;
     font-size: 36pt;
     text-decoration: none;
 }
@@ -28,10 +34,14 @@ h2,
 h3,
 h4 {
     font-family: 'Lobster', cursive;
+    color: #2c6e49;
+    margin-bottom: 0.5em;
 }
 
 .date {
-    color: #828282;
+    color: #8a9a84;
+    font-style: italic;
+    font-size: 0.9em;
 }
 
 .save {
@@ -52,6 +62,23 @@ h4 {
     margin-right: 20px;
 }
 
+/* Make the icon bigger and prettier */
+.top-menu svg {
+    width: 1.8em;       /* bigger but not too big */
+    height: 1.8em;
+    fill: #a3d9a5;      /* soft, fresh green for that aesthetic vibe */
+    transition: transform 0.3s ease, fill 0.3s ease;
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.15)); /* subtle shadow for depth */
+}
+
+/* Hover effect to give it life */
+.top-menu:hover svg {
+    transform: scale(1.2) rotate(10deg);
+    fill: #6bbf59;      /* a deeper green on hover */
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.25));
+    cursor: pointer;
+}
+
 .post {
     margin-bottom: 70px;
 }
@@ -68,13 +95,42 @@ h4 {
 
 .btn-secondary,
 .btn-secondary:visited {
-    color: #C25100;
+    color: #4a7c59;
     background: none;
-    border-color: #C25100;
+    border: 2px solid #4a7c59;
     margin-left: 15px;
 }
 
 .btn-secondary:hover {
-    color: #FFFFFF;
-    background-color: #C25100;
+    color: #e6f2e6;
+    background-color: #4a7c59;
+    border-color: #3b6847;
+    box-shadow: 0 0 8px #3b6847aa;
+}
+
+.btn-secondary.icon-only {
+    background-color: #e6f2ec;
+    padding: 8px;
+    border-radius: 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.btn-secondary.icon-only:hover {
+    background-color: #d3eadf;
+}
+
+.btn-secondary.icon-only svg {
+    width: 1.25em;
+    height: 1.25em;
+    fill: #4a7c59;
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.btn-secondary.icon-only:hover svg {
+    transform: scale(1.2);
+    fill: #2d5943;
 }
