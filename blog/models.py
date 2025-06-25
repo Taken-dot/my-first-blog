@@ -22,6 +22,6 @@ class Post(models.Model):
     #soft delete
     # def delete(self):
     #  self.is_deleted=True #when post is deleted, it just flag as deleted but passing true
-    # self .save()
+    # self .save(
 
           
