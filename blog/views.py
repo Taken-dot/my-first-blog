@@ -52,4 +52,7 @@ def post_delete ( request,pk):
      return redirect ('post_list') #after deleting post sending user back to post list page
     return render ( request, 'blog/post_delete.html', {'post' : post} )
 
+def portfolio(request):
+    return render ( request, 'blog/portfolio.html')
+
 

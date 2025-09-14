@@ -9,6 +9,7 @@
                 {{ post.published_date }}
             </time>
             <h2>
+                <a href="{% url 'portfolio' %}">Portfolio</a>
                 <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
                 <a href="{% url 'post_delete' post.pk %}" class="btn btn-secondary icon-only">
                     {% include './icons/trash3.svg' %}
