@@ -16,7 +16,7 @@ A Django web application I built to showcase my work and share my thoughts.
 - PythonAnywhere hosting
 
 ## Live site
-[Link to your PythonAnywhere site]
+https://aparna.pythonanywhere.com/
 
 ## What I learned
 - Django MVC architecture
