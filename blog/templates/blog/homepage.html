@@ -1,26 +1,62 @@
 <!DOCTYPE html>
 {% load static %}
+<html lang="en">
 <head>
-    <title> My Homepage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My Portfolio</title>
+
+    <!-- Google Font for Lobster -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <!-- My CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
 </head>
 
 <body>
-    <div class = "page-header">
-        <h1>  💃 Welcome to my one and only website. Leyy goooo!! 💃</h1>  
-    </div>
 
-    <h2> Choose what you want to explore : </h2>
-    
-    <div class = "post">
-        <h3> Portfolio </h3>
-        <p> Check my work and projects so far</p>
-        <a href = "/portfolio/" class="btn-secondary"> Go to Portfolio</a>
-    </div>
+   <!--Hero Section-->
+   <section class ="hero">
+    <p class = "title"> Aparna Pant </p>
+    <h1>Step Into My Space</h1>
+    <p class = "tagline"> <span class="highlight">Tech . Projects . Ideas</span><br> Things I create & Things I explore <br> Crafting digital experiences with code and creativity</p>
+   </section>
 
-    <div class="post">
-        <h3> Stories </h3>
-        <p> (👉ﾟヮﾟ)👉 </p>
-        <a href="/stories/" class="btn-secondary"> Read my Stories</a>
+   <!--Main Content-->
+   <div class = "container">
+      <h2 class = "section-title"> Select your path </h2>
+
+      <div class = "cards">
+        <!--Portfolio Card-->
+        <a href = "/portfolio/" class = "card portfolio">
+            <div class = "card-content">
+                <div class = "icon"> ⚡</div>
+                <h3> Portfolio </h3>
+                <p> Discover my projects, skills and professional journey</p>
+                <div class = "arrow"> → </div>
+            </div>
+        </a>
+
+        <!--Stories Card-->
+        <a href = "/stories/" class = "card stories">
+            <div class = "icon">📖</div>
+            <h3>Stories</h3>
+            <p> Explore my thoughts, experiences, and creative narratives</p>
+            <div class = "arrow"> → </div>
+        </a>
+
+        
+      </div>
+   </div>
+
+   <!--Footer-->
+   <footer>
+    <div class = "social-links">
+        <a href="https://www.linkedin.com/in/aparna-pant-abb55b202/" target="_blank" title="LinkedIn">💼</a>
+        <a href="https://github.com/Taken-dot" target="_blank" title="GitHub">🐙</a>
+        <a href="mailto:pant.aparna87@gmail.com" title="Email">✉️</a>
     </div>
+    <p>© 2025 Aparna Pant. Crafted with care and Django.</p>
+   </footer>
 </body>
+</html>
