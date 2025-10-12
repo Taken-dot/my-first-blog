@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post
+from .models import Post, Profile, Project, Skill
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
@@ -56,6 +56,15 @@ def post_delete ( request,pk):
     return render ( request, 'blog/post_delete.html', {'post' : post} )
 
 def portfolio(request):
-    return render ( request, 'blog/portfolio.html')
+    profile = Profile.objects.first()
+    projects = Project.objects.filter(is_featured=True)
+
+    context = {
+        'profile' : profile,
+        'projects' : projects,
+        'skills' : Skill.objects.all().order_by('order'),
+        
+    }
+    return render ( request, 'blog/portfolio.html', context)
 
 

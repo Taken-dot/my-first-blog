@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Portfolio{% endblock %} - Aparna Pant</title>
+    <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">AP</a>
+            <div class="nav-links">
+                <a href="{% url 'portfolio' %}#about">About</a>
+                <a href="{% url 'portfolio' %}#projects">Projects</a>
+                <a href="{% url 'portfolio' %}#skills">Skills</a>
+                <a href="{% url 'portfolio' %}#experience">Experience</a>
+                <a href="{% url 'portfolio' %}#contact">Contact</a>
+            </div>
+        </div>
+    </nav>   
+
+    <!-- Main Content -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Aparna Pant. Built with Django.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/animations.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
