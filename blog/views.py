@@ -62,7 +62,7 @@ def portfolio(request):
     context = {
         'profile' : profile,
         'projects' : projects,
-        'skills' : Skill.objects.all().order_by('order'),
+        'skills' : Skill.objects.all().order_by('category', 'order'),
         
     }
     return render ( request, 'blog/portfolio.html', context)

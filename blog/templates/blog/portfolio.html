@@ -96,30 +96,37 @@
         </div>
     </section>
 
-    <!-- Skills Section (Placeholder) -->
-    <section id="skills" class="section skills-section">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-container">
+
+<!-- Skills Section -->
+<section id="skills" class="section skills-section">
+    <div class="container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-container">
+            <div class="categories-wrapper">
                 {% regroup skills by category as skills_by_category %}
                 {% for category in skills_by_category %}
                 <div class="skill-category">
-                    <h3 class="category-title">{{ category.grouper }}</h3>
-                    <div class="skills-grid">
+                    <div class="category-header">
+                        <span class="category-icon">
+                            {% if category.grouper == "language" %}💻
+                            {% elif category.grouper == "framework" %}🚀
+                            {% elif category.grouper == "database" %}🗄️
+                            {% elif category.grouper == "tool" %}🛠️
+                            {% else %}📚{% endif %}
+                        </span>
+                        <h3 class="category-title">{{ category.grouper|title }}s</h3>
+                    </div>
+                    <div class="skills-badges">
                         {% for skill in category.list %}
-                        <div class="skill-item">
-                            <span class="skill-name">{{ skill.name }}</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: {{ skill.proficiency }}%"></div>
-                            </div>
-                        </div>
+                        <div class="skill-badge">{{ skill.name }}</div>
                         {% endfor %}
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Experience Section (Placeholder) -->
     <section id="experience" class="section experience-section">
