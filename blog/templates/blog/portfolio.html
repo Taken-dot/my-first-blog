@@ -129,12 +129,35 @@
 </section>
 
     <!-- Experience Section (Placeholder) -->
-    <section id="experience" class="section experience-section">
-        <div class="container">
-            <h2 class="section-title">Work Experience</h2>
-            <p class="coming-soon">Coming soon - Add experience through admin panel</p>
-        </div>
-    </section>
+<section id="experience" class="section experience-section">
+    <div class="container">
+        <h2 class="section-title">Work Experience</h2>
+
+        {% if experiences %}
+            <div class="experience-list">
+                {% for exp in experiences %}
+                    <div class="experience-item">
+                        <h3>{{ exp.position }}</h3>
+                        <p><strong>{{ exp.company }}</strong> — {{ exp.location }}</p>
+
+                        <p>
+                            {{ exp.start_date }} –
+                            {% if exp.is_current %}
+                                Present
+                            {% else %}
+                                {{ exp.end_date }}
+                            {% endif %}
+                        </p>
+
+                        <p>{{ exp.description }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="coming-soon">No experience added yet.</p>
+        {% endif %}
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
